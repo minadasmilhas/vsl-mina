@@ -24,8 +24,8 @@ cp -r sistema/images nome-da-pagina/
 <!-- Open Graph Meta Tags (para compartilhamento em redes sociais) -->
 <meta property="og:title" content="Seu Título Aqui">
 <meta property="og:description" content="Sua descrição curta aqui">
-<meta property="og:image" content="https://vsl.amindasmilhas.com.br/sistema/images/thumb-meta-open-graph.webp">
-<meta property="og:url" content="https://vsl.amindasmilhas.com.br/nome-da-pagina/">
+<meta property="og:image" content="https://lp.amindasmilhas.com.br/sistema/images/thumb-meta-open-graph.webp">
+<meta property="og:url" content="https://lp.amindasmilhas.com.br/nome-da-pagina/">
 <meta property="og:type" content="website">
 ```
 
