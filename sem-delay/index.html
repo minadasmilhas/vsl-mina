@@ -11,10 +11,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema M.I.N.A. — A Mina das Milhas (Sem Delay)</title>
+  <title>Sistema MINA — A Mina das Milhas (Sem Delay)</title>
 
   <!-- Open Graph Meta Tags (para compartilhamento em redes sociais) -->
-  <meta property="og:title" content="Sistema M.I.N.A. — A Mina das Milhas">
+  <meta property="og:title" content="Sistema MINA — A Mina das Milhas">
   <meta property="og:description" content="Aprenda a converter seus gastos em milhas e passagens aéreas. Método comprovado para viagens internacionais 100% com pontos.">
   <meta property="og:image" content="https://lp.amindasmilhas.com.br/sistema/images/thumb-meta-open-graph.webp">
   <meta property="og:url" content="https://lp.amindasmilhas.com.br/sem-delay/">
@@ -185,6 +185,8 @@
       font-size: 0.78rem;
       font-weight: 300;
       margin-top: 12px;
+      white-space: nowrap;
+      overflow-x: auto;
     }
     .btn-trust--light { color: rgba(252, 245, 227, 0.7); }
     .btn-trust--dark { color: rgba(54, 54, 54, 0.6); }
@@ -427,7 +429,7 @@
       .testimonials-grid { grid-template-columns: 1fr; }
     }
 
-    /* MODULES (M.I.N.A.) */
+    /* MODULES (MINA) */
     #modules {
       background: var(--blue-dark);
       padding: 90px 24px;
@@ -515,9 +517,12 @@
     .pricing-stack li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
     .pricing-divider { border: none; border-top: 1px solid rgba(54, 54, 54, 0.1); margin: 24px 0; }
     .pricing-installment { font-family: 'Alexandria', sans-serif; font-size: clamp(2.2rem, 7vw, 3.2rem); font-weight: 700; color: var(--blue-dark); line-height: 1; }
-    .pricing-installment span { font-size: 0.55em; font-weight: 400; color: var(--grey-text); }
+    .pricing-installment span { font-size: 0.55em; font-weight: 400; color: var(--grey-text); display: block; margin-bottom: 6px; }
+    .pricing-installment .currency { font-size: 0.5em; font-weight: 400; vertical-align: top; margin-right: 2px; }
     .pricing-cash { font-family: 'Alexandria', sans-serif; font-size: 1rem; color: var(--grey-text); margin-bottom: 32px; }
     .guarantee-box { background: rgba(8, 49, 53, 0.04); border: 1px solid rgba(235, 112, 0, 0.2); border-radius: 6px; padding: 28px 24px; margin-top: 32px; }
+    .guarantee-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--blue-dark); margin-bottom: 12px; }
+    .guarantee-text { font-family: 'Alexandria', sans-serif; font-size: 0.9rem; line-height: 1.7; color: var(--grey-text); }
 
     /* BIO / MENTORA */
     #bio {
@@ -624,8 +629,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- FIRST CTA -->
   <section id="first-cta">
     <a href="https://pay.hotmart.com/Q106074371A" class="btn-cta">Quero Ativar Meu Retorno Bancário Agora</a>
-    <p class="btn-trust btn-trust--light">🔒 Ambiente Seguro &nbsp;|&nbsp; ⚡ Acesso Instantâneo &nbsp;|&nbsp; 🛡️ 7 Dias de Garantia
-</p>
+    <p class="btn-trust btn-trust--light">🔒 Ambiente Seguro &nbsp;|&nbsp; ⚡ Acesso Instantâneo &nbsp;|&nbsp; 🛡️ 7 Dias de Garantia</p>
   </section>
 
   <!-- PROBLEM -->
@@ -673,10 +677,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- MODULES (M.I.N.A.) -->
+  <!-- MODULES (MINA) -->
   <section id="modules">
     <div class="container">
-      <h2 class="section-title section-title--light">O Sistema M.I.N.A. por Dentro</h2>
+      <h2 class="section-title section-title--light">O Sistema MINA por Dentro</h2>
       <p class="section-subtitle" style="color: rgba(252, 245, 227, 0.7);">A engenharia prática desenvolvida para extrair resultados imediatos.</p>
 
       <div class="modules-grid">
@@ -701,7 +705,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="pricing-box">
         <div class="pricing-logo-small">Método Oficial</div>
-        <div class="pricing-brand">Sistema M.I.N.A.</div>
+        <div class="pricing-brand">Sistema MINA</div>
 
         <ul class="pricing-stack">
           <li>O Sistema Mina Completo (3 Módulos)</li>
@@ -711,10 +715,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
 
         <hr class="pricing-divider">
-        <div class="pricing-installment"><span>Apenas 12x de</span> R$ 27,00</div>
-        <div class="pricing-cash">ou <strong>R$ 297,00 à vista</strong></div>
+        <div class="pricing-installment"><span>Apenas 12x de</span><sup class="currency">R$</sup> 29,70</div>
+        <div class="pricing-cash">ou <strong>R$ 287,14 à vista</strong></div>
 
-        <a href="https://pay.hotmart.com/Q106074371A" class="btn-cta">Garantir Meu Acesso ao Sistema M.I.N.A.</a>
+        <a href="https://pay.hotmart.com/Q106074371A" class="btn-cta">Garantir Meu Acesso ao Sistema MINA</a>
         <p class="btn-trust btn-trust--dark">🔒 Transação assegurada via Hotmart | 7 Dias de Garantia</p>
 
         <div class="guarantee-box">
@@ -753,10 +757,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="option-card option-card--good">
           <div class="option-label">Opção 2</div>
-          <p>Garantir o seu acesso vitalício ao Sistema M.I.N.A., colocar a Inteligência Artificial para analisar sua conta corrente e passar a viajar com os gastos que você já faz.</p>
+          <p>Garantir o seu acesso vitalício ao Sistema MINA, colocar a Inteligência Artificial para analisar sua conta corrente e passar a viajar com os gastos que você já faz.</p>
         </div>
       </div>
-      <a href="https://pay.hotmart.com/Q106074371A" class="btn-cta">Quero Ser o 1 em 10 Agora</a>
+      <a href="https://pay.hotmart.com/Q106074371A" class="btn-cta">Quero entrar no Sistema MINA</a>
     </div>
   </section>
 
@@ -765,7 +769,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <p>Todos os Direitos Reservados &copy; A Mina das Milhas &nbsp;|&nbsp; Sistema M.I.N.A.</p>
+    <p>Todos os Direitos Reservados &copy; A Mina das Milhas &nbsp;|&nbsp; Sistema MINA</p>
     <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.5;">Aviso Legal: Os resultados reais de acúmulo e upgrade de cartões dependem do histórico de crédito individual e da volumetria de gastos mensais junto às instituições financeiras.</p>
   </div>
 </footer>
