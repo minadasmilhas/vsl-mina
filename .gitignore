@@ -1,0 +1,11 @@
+# Ignorar tudo por padrão
+*
+**/
+
+# Permitir apenas arquivos/pastas necessárias para deploy
+!.gitignore
+!index.html
+!sistema/
+!sistema/**
+!sem-delay/
+!sem-delay/**
