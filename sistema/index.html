@@ -277,13 +277,17 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       background: var(--blue-dark);
-      padding: 60px 24px 60px;
+      padding: 40px 24px 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      transition: min-height 0.4s ease;
+    }
+    #hero.hero--collapsed {
+      min-height: 0;
     }
 
     .hero-badge {
@@ -333,10 +337,10 @@
     .smartplayer-headline { display: none !important; }
 
     /* ============================================================
-       SALES BODY (Sempre aberto e visível para o Mockup)
+       SALES BODY (Revelado pelo VTurb no tempo configurado no player)
     ============================================================ */
     #sales-body {
-      display: block !important; 
+      display: none;
     }
 
     /* FIRST CTA */
@@ -582,10 +586,14 @@
     .option-card p { font-family: 'Alexandria', sans-serif; font-size: 0.88rem; line-height: 1.7; color: rgba(252, 245, 227, 0.75); }
 
     footer {
+      display: none;
       background: #020e10;
       padding: 40px 24px;
       text-align: center;
       border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    footer.footer--visible {
+      display: block;
     }
     footer p { font-family: 'Alexandria', sans-serif; font-size: 0.78rem; color: rgba(252, 245, 227, 0.4); }
 
@@ -956,6 +964,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   sync();
   setInterval(sync, 1000);
+})();
+</script>
+
+<!-- ============================================================
+     Colapsa o #hero (sai do 100vh) e revela o footer assim que o
+     VTurb tornar o #sales-body visível (no tempo configurado no player).
+     Não usa timer próprio: só reage à mudança que o VTurb já faz.
+============================================================ -->
+<script>
+(function () {
+  var hero = document.getElementById('hero');
+  var salesBody = document.getElementById('sales-body');
+  var footer = document.querySelector('footer');
+  if (!hero || !salesBody) return;
+
+  function isVisible(el) {
+    return window.getComputedStyle(el).display !== 'none';
+  }
+
+  function reveal() {
+    hero.classList.add('hero--collapsed');
+    if (footer) footer.classList.add('footer--visible');
+  }
+
+  if (isVisible(salesBody)) {
+    reveal();
+    return;
+  }
+
+  var observer = new MutationObserver(function () {
+    if (isVisible(salesBody)) {
+      reveal();
+      observer.disconnect();
+    }
+  });
+  observer.observe(salesBody, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
 </script>
 
