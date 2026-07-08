@@ -4,8 +4,8 @@
 /sistema/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-/sem-delay/images/*
+/sistema-mina-sd/images/*
   Cache-Control: public, max-age=86400
 
-/sem-delay/fonts/*
+/sistema-mina-sd/fonts/*
   Cache-Control: public, max-age=31536000, immutable
