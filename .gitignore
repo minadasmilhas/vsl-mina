@@ -5,6 +5,7 @@
 # Permitir apenas arquivos/pastas necessárias para deploy
 !.gitignore
 !_headers
+!_redirects
 !index.html
 !sistema/
 !sistema/**

@@ -1,0 +1,3 @@
+/sem-delay              /sistema-mina-sd/  301
+/sem-delay/             /sistema-mina-sd/  301
+/sem-delay/*            /sistema-mina-sd/:splat  301
