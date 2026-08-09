@@ -135,17 +135,32 @@
 
     /* STEPS */
     .steps-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px 24px;
-      margin-bottom: 32px;
-      font-family: 'Alexandria', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--blue-dark);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 620px;
+      margin: 0 auto 32px;
+      border: 1px solid rgba(8, 49, 53, 0.15);
+      border-radius: 6px;
+      overflow: hidden;
     }
-    .steps-row .step--done { color: var(--orange); }
+    .step-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      background: var(--white);
+      border-right: 1px solid rgba(8, 49, 53, 0.15);
+      padding: 12px 8px;
+      text-align: center;
+      font-family: 'Alexandria', sans-serif;
+      font-size: 0.76rem;
+      line-height: 1.4;
+      color: var(--grey-text);
+    }
+    .step-box:last-child { border-right: none; }
+    .step-box--done { background: #E8F8EE; }
+    .step-box .step-check { font-size: 1.05rem; line-height: 1; }
+    .step-box strong { color: var(--blue-dark); }
 
     .upsell-hero p {
       font-family: 'Alexandria', sans-serif;
@@ -469,9 +484,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Parabéns! Você acaba de garantir o Sistema MINA, mas ainda não feche essa página!</h1>
 
     <div class="steps-row">
-      <span class="step step--done">✔ Passo 1: Sistema MINA</span>
-      <span class="step step--done">✔ Passo 2: Acelere seus resultados</span>
-      <span class="step">⚙ Passo 3: Compra concluída!</span>
+      <div class="step-box step-box--done">
+        <span class="step-check">✅</span>
+        <span><strong>Passo 1:</strong> Sistema MINA</span>
+      </div>
+      <div class="step-box step-box--done">
+        <span class="step-check">✅</span>
+        <span><strong>Passo 2:</strong> Acelere seus resultados</span>
+      </div>
+      <div class="step-box">
+        <span class="step-check">⚙️</span>
+        <span><strong>Passo 3:</strong> Compra concluída!</span>
+      </div>
     </div>
 
     <p>Você vai transformar gasto em viagem. Mas já pensou ir além disso? Ter eu e minha equipe trabalhando pra você não depender só do que gasta no cartão pra multiplicar suas milhas.</p>
