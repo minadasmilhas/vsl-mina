@@ -648,6 +648,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ============================================================ -->
 <script>
 (function () {
+  var GATE_ENABLED = false; // true = ativa o delay do VTurb. Deixe false pra aprovação/preview com tudo visível.
+  if (!GATE_ENABLED) return;
+
   var salesBody = document.getElementById('sales-body');
   var footer = document.querySelector('footer');
   if (!salesBody) return;
