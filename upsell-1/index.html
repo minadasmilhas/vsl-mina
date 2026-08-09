@@ -446,22 +446,11 @@
     }
 
     footer {
-      display: none;
       background: #020e10;
       padding: 32px 24px;
       text-align: center;
     }
-    footer.footer--visible {
-      display: block;
-    }
     footer p { font-family: 'Alexandria', sans-serif; font-size: 0.72rem; color: rgba(252, 245, 227, 0.4); }
-
-    /* ============================================================
-       SALES BODY (Revelado pelo VTurb no tempo configurado no player)
-    ============================================================ */
-    #sales-body {
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -623,9 +612,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <!-- ============================================================
-     Revela o #sales-body e o footer assim que o VTurb tornar o
-     #sales-body visível (no tempo configurado no player).
-     Não usa timer próprio: só reage à mudança que o VTurb já faz.
+     Só esconde o #sales-body/footer enquanto existir um player VTurb
+     real na página (vturb-smartplayer). Sem vídeo real, tudo fica
+     visível normalmente. Quando o vídeo real for inserido e o VTurb
+     configurar o tempo de revelação, o conteúdo passa a ficar oculto
+     até o VTurb liberar (sem depender de timer próprio nosso).
 ============================================================ -->
 <script>
 (function () {
@@ -637,21 +628,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return window.getComputedStyle(el).display !== 'none';
   }
 
-  function reveal() {
-    if (footer) footer.classList.add('footer--visible');
+  function sync() {
+    var visible = isVisible(salesBody);
+    if (footer) footer.style.display = visible ? '' : 'none';
   }
 
-  if (isVisible(salesBody)) {
-    reveal();
-    return;
-  }
+  var hasRealPlayer = !!document.querySelector('vturb-smartplayer');
+  if (!hasRealPlayer) return; // sem vídeo real: não esconde nada
 
-  var observer = new MutationObserver(function () {
-    if (isVisible(salesBody)) {
-      reveal();
-      observer.disconnect();
-    }
-  });
+  sync();
+  var observer = new MutationObserver(sync);
   observer.observe(salesBody, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
 </script>

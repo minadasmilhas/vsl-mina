@@ -336,13 +336,6 @@
     vturb-headline,
     .smartplayer-headline { display: none !important; }
 
-    /* ============================================================
-       SALES BODY (Revelado pelo VTurb no tempo configurado no player)
-    ============================================================ */
-    #sales-body {
-      display: none;
-    }
-
     /* FIRST CTA */
     #first-cta {
       background: #0b3d42;
@@ -586,14 +579,10 @@
     .option-card p { font-family: 'Alexandria', sans-serif; font-size: 0.88rem; line-height: 1.7; color: rgba(252, 245, 227, 0.75); }
 
     footer {
-      display: none;
       background: #020e10;
       padding: 40px 24px;
       text-align: center;
       border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    footer.footer--visible {
-      display: block;
     }
     footer p { font-family: 'Alexandria', sans-serif; font-size: 0.78rem; color: rgba(252, 245, 227, 0.4); }
 
@@ -968,9 +957,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <!-- ============================================================
-     Colapsa o #hero (sai do 100vh) e revela o footer assim que o
-     VTurb tornar o #sales-body visível (no tempo configurado no player).
-     Não usa timer próprio: só reage à mudança que o VTurb já faz.
+     Só esconde o #sales-body/footer (e mantém o #hero em 100vh)
+     enquanto existir um player VTurb real na página (vturb-smartplayer).
+     Sem vídeo real, tudo fica visível normalmente. Quando o vídeo real
+     estiver presente e o VTurb configurar o tempo de revelação, o
+     conteúdo passa a ficar oculto até o VTurb liberar (sem depender
+     de timer próprio nosso).
 ============================================================ -->
 <script>
 (function () {
@@ -983,22 +975,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return window.getComputedStyle(el).display !== 'none';
   }
 
-  function reveal() {
-    hero.classList.add('hero--collapsed');
-    if (footer) footer.classList.add('footer--visible');
+  function sync() {
+    var visible = isVisible(salesBody);
+    if (visible) hero.classList.add('hero--collapsed');
+    else hero.classList.remove('hero--collapsed');
+    if (footer) footer.style.display = visible ? '' : 'none';
   }
 
-  if (isVisible(salesBody)) {
-    reveal();
-    return;
-  }
+  var hasRealPlayer = !!document.querySelector('vturb-smartplayer');
+  if (!hasRealPlayer) return; // sem vídeo real: não esconde nada
 
-  var observer = new MutationObserver(function () {
-    if (isVisible(salesBody)) {
-      reveal();
-      observer.disconnect();
-    }
-  });
+  sync();
+  var observer = new MutationObserver(sync);
   observer.observe(salesBody, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
 </script>
