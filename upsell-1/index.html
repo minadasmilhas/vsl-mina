@@ -446,11 +446,22 @@
     }
 
     footer {
+      display: none;
       background: #020e10;
       padding: 32px 24px;
       text-align: center;
     }
+    footer.footer--visible {
+      display: block;
+    }
     footer p { font-family: 'Alexandria', sans-serif; font-size: 0.72rem; color: rgba(252, 245, 227, 0.4); }
+
+    /* ============================================================
+       SALES BODY (Revelado pelo VTurb no tempo configurado no player)
+    ============================================================ */
+    #sales-body {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -481,6 +492,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="media-placeholder">Vídeo de Upsell<br>(VTurb — aguardando vídeo)</div>
   </div>
 </section>
+
+<!-- SALES BODY (revelado pelo VTurb no tempo configurado no player) -->
+<div id="sales-body">
 
 <!-- PRICE -->
 <section class="price-section">
@@ -573,6 +587,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+</div>
+<!-- /SALES BODY -->
+
 <!-- FOOTER -->
 <footer>
   <p>Todos os Direitos Reservados &copy; A Mina das Milhas &nbsp;|&nbsp; Sistema MINA</p>
@@ -602,6 +619,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     render();
   }, 1000);
+})();
+</script>
+
+<!-- ============================================================
+     Revela o #sales-body e o footer assim que o VTurb tornar o
+     #sales-body visível (no tempo configurado no player).
+     Não usa timer próprio: só reage à mudança que o VTurb já faz.
+============================================================ -->
+<script>
+(function () {
+  var salesBody = document.getElementById('sales-body');
+  var footer = document.querySelector('footer');
+  if (!salesBody) return;
+
+  function isVisible(el) {
+    return window.getComputedStyle(el).display !== 'none';
+  }
+
+  function reveal() {
+    if (footer) footer.classList.add('footer--visible');
+  }
+
+  if (isVisible(salesBody)) {
+    reveal();
+    return;
+  }
+
+  var observer = new MutationObserver(function () {
+    if (isVisible(salesBody)) {
+      reveal();
+      observer.disconnect();
+    }
+  });
+  observer.observe(salesBody, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
 </script>
 
