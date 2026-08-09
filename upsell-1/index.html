@@ -117,6 +117,18 @@
     }
     .urgency-bar span { font-variant-numeric: tabular-nums; }
 
+    /* ICONS */
+    .icon {
+      display: inline-block;
+      width: 1.05em;
+      height: 1.05em;
+      vertical-align: -0.18em;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .icon--current { stroke: currentColor; }
+    .icon--lg { width: 22px; height: 22px; }
+
     /* HERO / TOPO */
     .upsell-hero {
       background: var(--offwhite);
@@ -351,11 +363,10 @@
     }
     .benefit-list li:last-child { border-bottom: none; }
     .benefit-list li::before {
-      content: '✔';
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='none' stroke='%23EB7000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       position: absolute;
       left: 0;
-      color: var(--orange);
-      font-weight: 700;
+      top: 16px;
     }
     .benefit-list li strong { color: var(--blue-dark); }
 
@@ -438,11 +449,10 @@
       color: var(--grey-text);
     }
     .recap-box li::before {
-      content: '✔';
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='%23EB7000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       position: absolute;
       left: 0;
-      color: var(--orange);
-      font-weight: 700;
+      top: 10px;
     }
     .recap-box .recap-price {
       text-align: center;
@@ -476,7 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- URGENCY BAR -->
-<div class="urgency-bar">⚠️ IMPORTANTE: ESSA PÁGINA SAIRÁ DO AR EM <span id="countdown">03:39</span></div>
+<div class="urgency-bar"><svg class="icon icon--current" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> IMPORTANTE: ESSA PÁGINA SAIRÁ DO AR EM <span id="countdown">03:39</span></div>
 
 <!-- HERO -->
 <section class="upsell-hero">
@@ -485,15 +495,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="steps-row">
       <div class="step-box step-box--done">
-        <span class="step-check">✅</span>
+        <svg class="icon icon--lg step-check" viewBox="0 0 24 24" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#16A34A" stroke="none"/><polyline points="8 12.5 11 15.5 16 9" stroke="#FFFFFF"/></svg>
         <span><strong>Passo 1:</strong> Sistema MINA</span>
       </div>
       <div class="step-box step-box--done">
-        <span class="step-check">✅</span>
+        <svg class="icon icon--lg step-check" viewBox="0 0 24 24" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#16A34A" stroke="none"/><polyline points="8 12.5 11 15.5 16 9" stroke="#FFFFFF"/></svg>
         <span><strong>Passo 2:</strong> Acelere seus resultados</span>
       </div>
       <div class="step-box">
-        <span class="step-check">⚙️</span>
+        <svg class="icon icon--lg step-check" viewBox="0 0 24 24" stroke="var(--blue-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         <span><strong>Passo 3:</strong> Compra concluída!</span>
       </div>
     </div>
