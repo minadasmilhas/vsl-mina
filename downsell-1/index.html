@@ -297,6 +297,15 @@
       scroll-margin-top: 24px;
     }
 
+    /* ============================================================
+       MODO APROVAÇÃO: força tudo visível, mesmo que o VTurb tente
+       esconder o #sales-body/footer no player. Remover este bloco
+       quando quiser ativar o delay real do VTurb.
+    ============================================================ */
+    #sales-body, footer {
+      display: block !important;
+    }
+
     /* PARCELAR (segunda oferta) */
     .parcelar-box {
       margin-top: 40px;
