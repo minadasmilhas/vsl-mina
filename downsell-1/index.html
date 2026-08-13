@@ -297,15 +297,6 @@
       scroll-margin-top: 24px;
     }
 
-    /* ============================================================
-       MODO APROVAÇÃO: força tudo visível, mesmo que o VTurb tente
-       esconder o #sales-body/footer no player. Remover este bloco
-       quando quiser ativar o delay real do VTurb.
-    ============================================================ */
-    #sales-body, footer {
-      display: block !important;
-    }
-
     /* PARCELAR (segunda oferta) */
     .parcelar-box {
       margin-top: 40px;
@@ -353,8 +344,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- SALES BODY (revelado pelo VTurb no tempo configurado no player) -->
-<div id="sales-body">
+<!-- SALES BODY DESATIVADO até o cliente aprovar (era <div id="sales-body">).
+     Pra reativar o delay do VTurb: devolva o id="sales-body" nesta div,
+     e restaure o bloco CSS/JS removido nesta mesma tarefa. -->
+<div>
 
 <section class="offer-section">
   <div class="container">
