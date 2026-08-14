@@ -548,11 +548,19 @@
     .recap-box li:last-child { border-bottom: none; }
 
     footer {
+      display: none;
       background: #020e10;
       padding: 32px 24px;
       text-align: center;
     }
     footer p { font-family: 'Alexandria', sans-serif; font-size: 0.72rem; color: rgba(252, 245, 227, 0.4); }
+
+    /* ============================================================
+       SALES BODY (Revelado pelo VTurb no tempo configurado no player)
+    ============================================================ */
+    #sales-body {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -600,10 +608,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- SALES BODY DESATIVADO até o cliente aprovar (era <div id="sales-body">).
-     Pra reativar o delay do VTurb: devolva o id="sales-body" nesta div,
-     e restaure o bloco CSS/JS removido nesta mesma tarefa. -->
-<div>
+<!-- SALES BODY (revelado pelo VTurb no tempo configurado no player) -->
+<div id="sales-body">
 
 <!-- PRICE -->
 <section class="price-section">
@@ -801,7 +807,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ============================================================ -->
 <script>
 (function () {
-  var GATE_ENABLED = false; // true = ativa o delay do VTurb. Deixe false pra aprovação/preview com tudo visível.
+  var GATE_ENABLED = true; // true = ativa o delay do VTurb. Deixe false pra aprovação/preview com tudo visível.
   if (!GATE_ENABLED) return;
 
   var salesBody = document.getElementById('sales-body');
@@ -814,7 +820,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function sync() {
     var visible = isVisible(salesBody);
-    if (footer) footer.style.display = visible ? '' : 'none';
+    if (footer) footer.style.display = visible ? 'block' : 'none';
   }
 
   var hasRealPlayer = !!document.querySelector('vturb-smartplayer');

@@ -203,12 +203,12 @@
     }
     .offer-section p {
       font-family: 'Alexandria', sans-serif;
-      font-size: 1rem;
+      font-size: 0.82rem;
       line-height: 1.75;
       color: var(--grey-text);
       max-width: 560px;
       margin: 0 auto 20px;
-      text-align: left;
+      text-align: center;
     }
     .offer-section p.offer-lead {
       font-family: 'Montserrat', sans-serif;
@@ -366,11 +366,19 @@
     }
 
     footer {
+      display: none;
       background: #020e10;
       padding: 32px 24px;
       text-align: center;
     }
     footer p { font-family: 'Alexandria', sans-serif; font-size: 0.72rem; color: rgba(252, 245, 227, 0.4); }
+
+    /* ============================================================
+       SALES BODY (Revelado pelo VTurb no tempo configurado no player)
+    ============================================================ */
+    #sales-body {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -386,7 +394,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <section class="downsell-hero">
   <div class="container">
-    <p>Calma… a Naty não desistiu de você e decidi te ligar no vídeo abaixo. Só mais 1 minutinho…</p>
+    <p><strong>Calma… a Naty não desistiu de você e decidi te ligar no vídeo abaixo. Só mais 1 minutinho…</strong></p>
 
     <!-- Player VTurb (Downsell V1) -->
     <vturb-smartplayer id="vid-6a7e6e61595d389f5213516c" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
@@ -399,10 +407,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- SALES BODY DESATIVADO até o cliente aprovar (era <div id="sales-body">).
-     Pra reativar o delay do VTurb: devolva o id="sales-body" nesta div,
-     e restaure o bloco CSS/JS removido nesta mesma tarefa. -->
-<div>
+<!-- SALES BODY (revelado pelo VTurb no tempo configurado no player) -->
+<div id="sales-body">
 
 <section class="offer-section">
   <div class="container">
@@ -429,7 +435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="price-cash">ou R$ 482 à vista, se preferir</div>
     </div>
 
-    <p>E continua valendo: 1 ano completo, com renovação já garantida em 50% de desconto.</p>
+    <p class="cta-subnote">E continua valendo: 1 ano completo, com renovação já garantida em 50% de desconto.</p>
 
     <p class="offer-warning">Essa oferta só vale nessa página. Se fechar, não vale mais.</p>
 
@@ -491,7 +497,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ============================================================ -->
 <script>
 (function () {
-  var GATE_ENABLED = false; // true = ativa o delay do VTurb. Deixe false pra aprovação/preview com tudo visível.
+  var GATE_ENABLED = true; // true = ativa o delay do VTurb. Deixe false pra aprovação/preview com tudo visível.
   if (!GATE_ENABLED) return;
 
   var salesBody = document.getElementById('sales-body');
@@ -504,7 +510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function sync() {
     var visible = isVisible(salesBody);
-    if (footer) footer.style.display = visible ? '' : 'none';
+    if (footer) footer.style.display = visible ? 'block' : 'none';
   }
 
   var hasRealPlayer = !!document.querySelector('vturb-smartplayer');
