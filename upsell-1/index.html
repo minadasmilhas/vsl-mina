@@ -242,59 +242,11 @@
       border-radius: 12px;
     }
 
-    /* PRICE BOX */
+    /* PRICE SECTION */
     .price-section {
-      background: var(--blue-dark);
-      padding: 48px 0;
+      background: var(--offwhite);
+      padding: 40px 0;
       text-align: center;
-    }
-    .price-section .price-kicker {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--offwhite);
-      margin-bottom: 8px;
-    }
-    .price-section .price-old {
-      font-family: 'Alexandria', sans-serif;
-      font-size: 0.95rem;
-      color: rgba(252, 245, 227, 0.7);
-      margin-bottom: 4px;
-    }
-    .price-section .price-old strong {
-      text-decoration: line-through;
-      color: var(--orange-light);
-    }
-    .price-main {
-      font-family: 'Alexandria', sans-serif;
-      font-size: clamp(2.2rem, 7vw, 3rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
-      margin: 12px 0 6px;
-    }
-    .price-main span {
-      display: block;
-      font-size: 0.5em;
-      font-weight: 400;
-      color: rgba(252, 245, 227, 0.7);
-      margin-bottom: 6px;
-    }
-    .price-main .currency {
-      font-size: 0.5em;
-      font-weight: 400;
-      vertical-align: top;
-      margin-right: 2px;
-    }
-    .price-note {
-      font-family: 'Alexandria', sans-serif;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 0.85rem;
-      color: rgba(252, 245, 227, 0.75);
-      max-width: 480px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
     }
 
     /* CTA Button */
@@ -322,6 +274,55 @@
     .btn-cta:hover {
       background: var(--orange-light);
       transform: translateY(-2px);
+    }
+
+    .cta-subnote {
+      text-align: center;
+      font-family: 'Alexandria', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: var(--blue-dark);
+      line-height: 1.4;
+      margin: 10px auto 0;
+      max-width: 480px;
+    }
+
+    /* PRICE CARD (componente reutilizado nas 3 ofertas) */
+    .price-card {
+      background: var(--white);
+      border: 1px solid rgba(8, 49, 53, 0.15);
+      border-radius: 14px;
+      padding: 22px 20px;
+      max-width: 420px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+    .price-card .price-label {
+      font-family: 'Alexandria', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--blue-dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .price-card .price-amount {
+      font-family: 'Alexandria', sans-serif;
+      font-size: clamp(1.8rem, 6vw, 2.3rem);
+      font-weight: 700;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .price-card .price-amount .currency {
+      font-size: 0.5em;
+      font-weight: 400;
+      vertical-align: top;
+      margin-right: 2px;
+    }
+    .price-card .price-cash {
+      font-family: 'Alexandria', sans-serif;
+      font-size: 0.9rem;
+      color: var(--grey-text);
+      margin-top: 6px;
     }
 
     /* WIDGET HOTMART (checkout real) */
@@ -376,44 +377,122 @@
       margin-bottom: 18px;
     }
 
+    /* Ícones circulares reutilizados nas listas de benefícios */
+    .icon-badge {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(235, 112, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-badge svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--orange);
+      fill: none;
+    }
+    .icon-badge--sm { width: 26px; height: 26px; }
+    .icon-badge--sm svg { width: 14px; height: 14px; }
+
     .benefit-list {
       list-style: none;
-      margin: 28px 0;
+      margin: 24px 0;
     }
     .benefit-list li {
-      font-family: 'Alexandria', sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.65;
-      padding: 14px 0 14px 32px;
-      position: relative;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
       border-bottom: 1px solid rgba(54, 54, 54, 0.1);
-      color: var(--grey-text);
     }
     .benefit-list li:last-child { border-bottom: none; }
-    .benefit-list li::before {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='none' stroke='%23EB7000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-      position: absolute;
-      left: 0;
-      top: 16px;
-    }
-    .benefit-list li strong { color: var(--blue-dark); }
-
-    .price-repeat {
-      text-align: center;
-      margin: 32px 0;
-    }
-    .price-repeat .price-line {
+    .benefit-list .benefit-text {
       font-family: 'Alexandria', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--blue-dark);
-      margin-bottom: 4px;
-    }
-    .price-repeat .price-line--alt {
-      font-weight: 400;
-      font-size: 1rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
       color: var(--grey-text);
     }
+    .benefit-list .benefit-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: var(--blue-dark);
+      margin-bottom: 2px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      background: var(--white);
+      padding: 48px 0 8px;
+    }
+    .testimonials-section .section-title-sm {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-dark);
+      margin-bottom: 20px;
+    }
+    .testimonial-card {
+      background: var(--offwhite);
+      border: 1px solid rgba(8, 49, 53, 0.1);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 0 auto 14px;
+      max-width: 560px;
+    }
+    .testimonial-card .name {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Alexandria', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #2E7D32;
+      margin-bottom: 6px;
+    }
+    .testimonial-card .quote {
+      font-family: 'Alexandria', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--grey-text);
+    }
+    .testimonial-card .ticks {
+      text-align: right;
+      font-size: 0.75rem;
+      color: #53BDEB;
+      margin-top: 8px;
+    }
+
+    /* HIGHLIGHT STAT */
+    .highlight-stat-section {
+      background: var(--white);
+      padding: 8px 0 48px;
+    }
+    .highlight-stat {
+      background: var(--blue-dark);
+      border-radius: 14px;
+      padding: 26px 22px;
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .highlight-stat .icon-badge {
+      margin: 0 auto 12px;
+      background: rgba(255, 138, 31, 0.18);
+    }
+    .highlight-stat p {
+      color: var(--offwhite);
+      font-family: 'Alexandria', sans-serif;
+      font-weight: 600;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .highlight-stat strong { color: var(--orange-light); }
 
     /* BONUS SECTION */
     .bonus-section {
@@ -447,10 +526,10 @@
 
     /* RECAP BOX */
     .recap-box {
-      background: rgba(8, 49, 53, 0.04);
+      background: var(--white);
       border: 1px solid rgba(235, 112, 0, 0.2);
       border-radius: 8px;
-      padding: 32px 24px;
+      padding: 24px 22px;
       max-width: 620px;
       margin: 0 auto;
       text-align: left;
@@ -461,42 +540,25 @@
       font-size: 1rem;
       color: var(--blue-dark);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       text-align: center;
     }
     .recap-box ul {
       list-style: none;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
     }
     .recap-box li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
       font-family: 'Alexandria', sans-serif;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      padding: 8px 0 8px 28px;
-      position: relative;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(8, 49, 53, 0.08);
       color: var(--grey-text);
     }
-    .recap-box li::before {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='%23EB7000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-      position: absolute;
-      left: 0;
-      top: 10px;
-    }
-    .recap-box .recap-price {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .recap-box .recap-price .price-line {
-      font-family: 'Alexandria', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--blue-dark);
-    }
-    .recap-box .recap-price .price-line--alt {
-      font-weight: 400;
-      font-size: 1rem;
-      color: var(--grey-text);
-    }
+    .recap-box li:last-child { border-bottom: none; }
 
     footer {
       background: #020e10;
@@ -559,16 +621,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- PRICE -->
 <section class="price-section">
   <div class="container">
-    <div class="price-kicker">VOCÊ QUER O ACELERADOR MINA</div>
-    <div class="price-old">DE <strong>R$ 1.500</strong> POR APENAS:</div>
-    <div class="price-main"><span>12x de</span><sup class="currency">R$</sup> 69,90</div>
-    <p class="price-note">(Acesso de 1 ano completo. Com a renovação já garantida com 50% de desconto, só por decidir hoje.)</p>
+    <div class="price-card">
+      <div class="price-label">VOCÊ QUER O ACELERADOR MINA DE <strong>R$ 1.500</strong> POR APENAS:</div>
+      <div class="price-amount">12x <sup class="currency">R$</sup> 69,90</div>
+      <div class="price-cash">ou R$ 675 à vista</div>
+    </div>
 
     <!-- Hotmart Sales Funnel Widget (checkout real) -->
     <div id="hotmart-sales-funnel"></div>
     <script>
       checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
     </script>
+    <p class="cta-subnote">Assinatura de 1 ano. Ao assinar, você já garante 50% de desconto na renovação.</p>
   </div>
 </section>
 
@@ -577,9 +641,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="guarantee-kicker">Pode se tranquilizar…</div>
     <img src="images/selo-garantia.webp" alt="Selo de Garantia de 7 dias" class="mockup-img" style="max-width: 320px;" width="450" height="433" loading="lazy">
-    <p>Seu investimento é 100% seguro e protegido por uma garantia incondicional de 7 dias. Se por qualquer motivo que seja você não gostar da entrega, devolvemos todo seu dinheiro sem questionamentos.</p>
-    <p>Agora ficou mais fácil decidir né?</p>
+    <p>Seu investimento é 100% seguro, protegido por garantia incondicional de 7 dias. Se não gostar da entrega, devolvemos tudo, sem questionamento.</p>
+    <p><strong>Agora ficou mais fácil decidir, né?</strong></p>
     <a href="#hotmart-sales-funnel" class="btn-cta">Sim! Adicione ao meu pedido</a>
+    <p class="cta-subnote">Assinatura de 1 ano. Ao assinar, você já garante 50% de desconto na renovação.</p>
   </div>
 </section>
 
@@ -587,60 +652,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="benefits-section">
   <div class="container">
     <h2>Eu vou acelerar e multiplicar as suas viagens.</h2>
-    <p>Mesmo com o melhor cartão, o gasto do dia a dia muitas vezes não dá milha suficiente pra viajar com quem você quiser, na data que quiser, pra onde quiser no mundo.</p>
-    <p>O Acelerador MINA multiplica suas milhas até isso deixar de ser problema.</p>
-    <p>Não é mais um curso. É eu e minha equipe fazendo isso por você.</p>
-    <p>E não fui eu que decidi: foi o pedido de quem comprou o Sistema MINA antes de você. O Acelerador foi o mais votado de todos.</p>
+    <p>Mesmo com o melhor cartão, o gasto do dia a dia nem sempre dá milha suficiente pra viajar quando, com quem e pra onde você quiser.</p>
+    <p>O Acelerador MINA resolve isso. Não é mais um curso. É eu e minha equipe fazendo por você.</p>
+    <p>E não fui eu que decidi: foi o pedido de quem já comprou o Sistema MINA. O mais votado de todos.</p>
     <p><strong>Você está prestes a receber:</strong></p>
 
     <ul class="benefit-list">
-      <li><strong>Grupo de Alertas MINA</strong> — eu e minha equipe avisamos a promoção de transferência bonificada em tempo real, direto no seu celular, pra você nunca mais perder a janela de multiplicar seus pontos</li>
-      <li><strong>Compra Bonificada</strong> — a gente te manda os sites que dão até 40x mais milhas do que os melhores cartões de crédito do Brasil, você só compra por eles</li>
-      <li><strong>Sinal de Compra de Milhas</strong> — eu te aviso quando compensa comprar milha direto, e por quanto, pra você fechar a passagem que falta sem pagar a mais</li>
-      <li><strong>Emissão Internacional Assistida</strong> — LATAM, GOL e Azul: quando você for emitir pro mundo inteiro, a gente emite com você, ao vivo, sem erro</li>
-      <li><strong>Comunidade MINA</strong> — acesso direto a mim e à minha equipe toda vez que precisar</li>
+      <li>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
+        <span class="benefit-text"><strong>Grupo de Alertas MINA</strong>Eu e minha equipe avisamos a promoção de transferência bonificada em tempo real, direto no seu celular, pra você nunca mais perder a janela de multiplicar seus pontos.</span>
+      </li>
+      <li>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+        <span class="benefit-text"><strong>Compra Bonificada</strong>A gente te manda os sites que dão até 40x mais milhas do que os melhores cartões de crédito do Brasil, você só compra por eles.</span>
+      </li>
+      <li>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+        <span class="benefit-text"><strong>Sinal de Compra de Milhas</strong>Eu te aviso quando compensa comprar milha direto, e por quanto, pra você fechar a passagem que falta sem pagar a mais.</span>
+      </li>
+      <li>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.4 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+        <span class="benefit-text"><strong>Emissão Internacional Assistida</strong>LATAM, GOL e Azul: quando você for emitir pro mundo inteiro, a gente emite com você, ao vivo, sem erro.</span>
+      </li>
+      <li>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="benefit-text"><strong>Comunidade MINA</strong>Acesso direto a mim e à minha equipe toda vez que precisar.</span>
+      </li>
     </ul>
 
     <p>Isso tudo é seu por 1 ano completo. Depois, com a família já viajando mais e economizando muito, sua renovação entra automaticamente com 50% de desconto garantido, só por você decidir agora.</p>
 
-    <div class="price-repeat">
-      <div class="price-line">12x de R$ 69,90</div>
-      <div class="price-line--alt">Ou... R$ 675 à vista!</div>
+    <div class="price-card">
+      <div class="price-amount">12x <sup class="currency">R$</sup> 69,90</div>
+      <div class="price-cash">ou R$ 675 à vista</div>
     </div>
 
     <a href="#hotmart-sales-funnel" class="btn-cta">Eu quero o Acelerador MINA</a>
+    <p class="cta-subnote">Assinatura de 1 ano. Ao assinar, você já garante 50% de desconto na renovação.</p>
     <img src="images/mockup-acelerador-mina.webp" alt="Mockup do Acelerador MINA" class="mockup-img" style="max-width: 480px;" width="700" height="361" loading="lazy">
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-title-sm">Quem já é aluna, conta como está sendo:</div>
+
+    <div class="testimonial-card">
+      <div class="name">💬 Aluna do Acelerador MINA</div>
+      <div class="quote">Esse ano são 10 mil reais a menos de economia em viagens! Fizemos as contas essa semana, de janeiro até novembro. E olha que ainda precisamos aprender mais, a ganhar milhas nos hotéis. Super gratos com o Acelerador Mina!</div>
+      <div class="ticks">✓✓</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="name">💬 Renata</div>
+      <div class="quote">O curso é sensacional. Vale super a pena. Estou economizando 13 mil numa viagem com as crianças esse ano com o Acelerador Mina!</div>
+      <div class="ticks">✓✓</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="name">💬 Helena 🇧🇷</div>
+      <div class="quote">Vim de Ita Airways em classe econômica, ida e volta com milhas. Em dinheiro sairia uns 5.200 e com o CMM deu uns 2000. Fui juntando na Smiles com promoção de compra e transferência do Acelerador Mina. Obrigada Naty!</div>
+      <div class="ticks">✓✓</div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT STAT -->
+<section class="highlight-stat-section">
+  <div class="container">
+    <div class="highlight-stat">
+      <span class="icon-badge"><svg viewBox="0 0 24 24" stroke="#FF8A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.75.75 1.23 1.5 1.41 2.5"/></svg></span>
+      <p>A grande maioria das alunas relata que o valor do Acelerador MINA <strong>não chega nem a 10%</strong> da economia que fizeram no ano viajando com milhas.</p>
+    </div>
   </div>
 </section>
 
 <!-- BONUS -->
 <section class="bonus-section">
   <div class="container">
-    <h2>Você ainda vai levar um super bônus…</h2>
-    <img src="images/mockup-bonus.webp" alt="Mockup do Bônus: 1 Ano de Comunidade MINA" class="mockup-img" style="max-width: 360px;" width="794" height="736" loading="lazy">
+    <h2>Você ainda vai levar mais um bônus…</h2>
+    <img src="images/mockup-bonus.webp" alt="Mockup do Bônus: Comunidade MINA" class="mockup-img" style="max-width: 360px;" width="794" height="736" loading="lazy">
 
-    <h3>1 Ano de Comunidade MINA — Grátis</h3>
-    <p>Se você clicar agora e adicionar o Acelerador MINA ao seu pedido, eu vou te dar de bônus 1 ano completo na Comunidade MINA sem nenhum custo a mais.</p>
-    <p>Lá dentro você tira dúvida comigo e com a minha equipe toda vez que for emitir, toda vez que aparecer uma promoção, toda vez que bater aquela insegurança na hora de resgatar.</p>
-    <p>Esse bônus vale R$ 297 e eu vou te entregar de graça agora.</p>
-    <p>Se isso faz sentido pra você, toca no botão abaixo e garante.</p>
+    <h3>Comunidade MINA</h3>
+    <p>Você não caminha sozinha nessa jornada.</p>
+    <p>Minha equipe está lá todos os dias, pronta pra tirar sua dúvida na hora que ela aparecer.</p>
+    <p>É uma comunidade acolhedora, cheia de gente buscando o mesmo objetivo que você. Cada um no seu ritmo, mas ninguém sozinho.</p>
 
     <div class="recap-box">
       <div class="recap-title">Você vai receber…</div>
       <ul>
-        <li>Grupo de Alertas MINA — a gente avisa a promoção de transferência bonificada em tempo real</li>
-        <li>Compra Bonificada — até 40x mais milhas que um ótimo cartão</li>
-        <li>Sinal de Compra de Milhas — a gente te diz quando e quanto comprar</li>
-        <li>Emissão Internacional Assistida — a gente emite com você, LATAM, GOL e Azul</li>
-        <li>Comunidade MINA por 1 ano</li>
-        <li>SUPER BÔNUS: 1 ano extra de Comunidade MINA grátis (valor R$ 297)</li>
-        <li>Renovação com 50% de desconto garantido, só por decidir agora</li>
+        <li>
+          <span class="icon-badge icon-badge--sm"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
+          <span>Grupo de Alertas MINA — promoção de transferência bonificada em tempo real</span>
+        </li>
+        <li>
+          <span class="icon-badge icon-badge--sm"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+          <span>Compra Bonificada — até 40x mais milhas que um ótimo cartão</span>
+        </li>
+        <li>
+          <span class="icon-badge icon-badge--sm"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+          <span>Sinal de Compra de Milhas — a gente te diz quando e quanto comprar</span>
+        </li>
+        <li>
+          <span class="icon-badge icon-badge--sm"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.4 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+          <span>Emissão Internacional Assistida — a gente emite com você, LATAM, GOL e Azul</span>
+        </li>
+        <li>
+          <span class="icon-badge icon-badge--sm"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span>
+          <span><strong>Bônus:</strong> Comunidade MINA, acesso direto a mim e à minha equipe todos os dias</span>
+        </li>
+        <li>
+          <span class="icon-badge icon-badge--sm"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+          <span>Renovação com 50% de desconto garantido, só por decidir agora</span>
+        </li>
       </ul>
-      <div class="recap-price">
-        <div class="price-line">12x de R$ 69,90</div>
-        <div class="price-line--alt">Ou... R$ 675 à vista!</div>
+
+      <div class="price-card" style="margin-top: 16px;">
+        <div class="price-amount">12x <sup class="currency">R$</sup> 69,90</div>
+        <div class="price-cash">ou R$ 675 à vista</div>
       </div>
+
       <a href="#hotmart-sales-funnel" class="btn-cta">Sim, eu quero acelerar meus resultados agora</a>
+      <p class="cta-subnote">Assinatura de 1 ano. Ao assinar, você já garante 50% de desconto na renovação.</p>
     </div>
 
     <img src="images/mockup-acelerador-mina.webp" alt="Mockup do Acelerador MINA" class="mockup-img" style="max-width: 480px;" width="700" height="361" loading="lazy">
