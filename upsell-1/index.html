@@ -436,35 +436,22 @@
       color: var(--blue-dark);
       margin-bottom: 20px;
     }
-    .testimonial-card {
-      background: var(--offwhite);
-      border: 1px solid rgba(8, 49, 53, 0.1);
-      border-radius: 12px;
-      padding: 16px 18px;
-      margin: 0 auto 14px;
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
       max-width: 560px;
+      margin: 0 auto;
     }
-    .testimonial-card .name {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Alexandria', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #2E7D32;
-      margin-bottom: 6px;
+    .testimonial-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
-    .testimonial-card .quote {
-      font-family: 'Alexandria', sans-serif;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--grey-text);
-    }
-    .testimonial-card .ticks {
-      text-align: right;
-      font-size: 0.75rem;
-      color: #53BDEB;
-      margin-top: 8px;
+    @media (max-width: 420px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
     }
 
     /* HIGHLIGHT STAT */
@@ -521,7 +508,7 @@
       color: var(--grey-text);
       max-width: 620px;
       margin: 0 auto 16px;
-      text-align: left;
+      text-align: center;
     }
 
     /* RECAP BOX */
@@ -698,22 +685,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-title-sm">Quem já é aluna, conta como está sendo:</div>
 
-    <div class="testimonial-card">
-      <div class="name">💬 Aluna do Acelerador MINA</div>
-      <div class="quote">Esse ano são 10 mil reais a menos de economia em viagens! Fizemos as contas essa semana, de janeiro até novembro. E olha que ainda precisamos aprender mais, a ganhar milhas nos hotéis. Super gratos com o Acelerador Mina!</div>
-      <div class="ticks">✓✓</div>
-    </div>
-
-    <div class="testimonial-card">
-      <div class="name">💬 Renata</div>
-      <div class="quote">O curso é sensacional. Vale super a pena. Estou economizando 13 mil numa viagem com as crianças esse ano com o Acelerador Mina!</div>
-      <div class="ticks">✓✓</div>
-    </div>
-
-    <div class="testimonial-card">
-      <div class="name">💬 Helena 🇧🇷</div>
-      <div class="quote">Vim de Ita Airways em classe econômica, ida e volta com milhas. Em dinheiro sairia uns 5.200 e com o CMM deu uns 2000. Fui juntando na Smiles com promoção de compra e transferência do Acelerador Mina. E eccomi qua a Roma! Obrigada Naty!</div>
-      <div class="ticks">✓✓</div>
+    <div class="testimonials-grid">
+      <img src="images/depoimento-up-1.webp" alt="Depoimento de aluna do Acelerador MINA" class="testimonial-img" width="600" height="170" loading="lazy">
+      <img src="images/depoimento-up-2.webp" alt="Depoimento de aluna do Acelerador MINA" class="testimonial-img" width="600" height="348" loading="lazy">
+      <img src="images/depoimento-up-3.webp" alt="Depoimento de aluna do Acelerador MINA" class="testimonial-img" width="600" height="478" loading="lazy">
+      <img src="images/depoimento-up-4.webp" alt="Depoimento de aluna do Acelerador MINA" class="testimonial-img" width="600" height="593" loading="lazy">
     </div>
   </div>
 </section>
