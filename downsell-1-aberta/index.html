@@ -378,6 +378,21 @@
     }
   </style>
 <style>#sales-body, footer { display: block !important; }</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  ['#sales-body', 'footer'].forEach(function (sel) {
+    var el = document.querySelector(sel);
+    if (!el) return;
+    function abrir() {
+      if (el.style.getPropertyValue('display') !== 'block' || el.style.getPropertyPriority('display') !== 'important') {
+        el.style.setProperty('display', 'block', 'important');
+      }
+    }
+    abrir();
+    new MutationObserver(abrir).observe(el, { attributes: true, attributeFilter: ['style'] });
+  });
+});
+</script>
 </head>
 <body>
 
