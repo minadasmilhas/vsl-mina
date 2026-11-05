@@ -8,7 +8,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TT7FV7W9');</script>
   <!-- End Google Tag Manager -->
-
+ 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema MINA — A Mina das Milhas</title>
@@ -17,21 +17,22 @@
   <meta property="og:title" content="Sistema MINA — A Mina das Milhas">
   <meta property="og:description" content="Aprenda a converter seus gastos em milhas e passagens aéreas. Método comprovado para viagens internacionais 100% com pontos.">
   <meta property="og:image" content="https://lp.aminadasmilhas.com.br/sistema/images/thumb-meta-open-graph.webp">
-  <meta property="og:url" content="https://lp.aminadasmilhas.com.br/sistema-mina-sd/">
+  <meta property="og:url" content="https://lp.aminadasmilhas.com.br/sistema/">
   <meta property="og:type" content="website">
 
   <!-- ============================================================
        VTURB — Otimização de Velocidade de Carregamento
   ============================================================ -->
-<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/52f8ef29-349e-4874-8125-1f02fe4dfccd/players/6a4da07e7a775150c1f5c791/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/52f8ef29-349e-4874-8125-1f02fe4dfccd/6a4c589b7e30c1619dc10171/main.m3u8" as="fetch">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://license.vturb.com">
-  
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/52f8ef29-349e-4874-8125-1f02fe4dfccd/ab-test/6a430e4a13837ee9f4be6645/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://license.vturb.com">
+  <link rel="preconnect" href="https://www.facebook.com">
+
   <style>
     /* ============================================================
        CUSTOM FONTS (Self-hosted)
@@ -174,7 +175,7 @@
       line-height: 1.3;
       box-shadow: 0 4px 15px rgba(235, 112, 0, 0.4);
     }
-    .btn-cta:hover {
+    .btn-cta:hover { 
       background: var(--orange-light);
       transform: translateY(-2px);
     }
@@ -273,15 +274,20 @@
        SECTION 0: HERO (Dobra Principal)
     ============================================================ */
     #hero {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       background: var(--blue-dark);
-      padding: 60px 24px 60px;
+      padding: 40px 24px 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      transition: min-height 0.4s ease;
+    }
+    #hero.hero--collapsed {
+      min-height: 0;
     }
 
     .hero-badge {
@@ -329,13 +335,6 @@
     /* Esconde a headline nativa do VTurb (já espelhada na .hero-headline) */
     vturb-headline,
     .smartplayer-headline { display: none !important; }
-
-    /* ============================================================
-       SALES BODY (Visível por padrão — Sem delay)
-    ============================================================ */
-    #sales-body {
-      display: block;
-    }
 
     /* FIRST CTA */
     #first-cta {
@@ -596,14 +595,12 @@
     }
 
     /* ===== COMBO LIVROS — CSS (início) ===== */
-    .combo-books{margin:8px 0 24px;padding:20px 16px 18px;background:#fff;border:1px solid rgba(8,49,53,.18);border-radius:8px;text-align:center}
+    .combo-books{margin:8px 0 24px;padding:20px 16px 18px;background:transparent;border:1px solid rgba(8,49,53,.18);border-radius:8px;text-align:center}
     .combo-books__tag{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-dark);background:rgba(8,49,53,.08);padding:5px 12px;border-radius:4px;margin-bottom:10px}
     .combo-books__title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue-dark);line-height:1.35}
-    .combo-books__covers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start;margin:16px 0 12px}
-    .combo-books__covers img{width:100%;height:auto;border-radius:4px}
+    .combo-books__covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start;margin:16px 0 0}
+    .combo-books__covers img{width:100%;height:auto;aspect-ratio:320/500;object-fit:contain}
     .combo-books__covers figcaption{font-size:.7rem;line-height:1.3;color:var(--grey-text);margin-top:6px}
-    .combo-books__price{font-family:'Alexandria',sans-serif;font-size:.9rem;color:var(--grey-text)}
-    .combo-books__price b{color:var(--blue-dark)}
     .bonus-label{display:block;text-align:left;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin:0 0 4px}
     #faq{background:var(--offwhite);padding:90px 24px}
     .faq-list{max-width:760px;margin:40px auto 0}
@@ -628,12 +625,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="hero">
   <div class="video-wrapper">
     <!-- Player VTurb (Teste A/B) — Formato Vertical 9:16 -->
-    <vturb-smartplayer id="vid-6a4da07e7a775150c1f5c791" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/52f8ef29-349e-4874-8125-1f02fe4dfccd/players/6a4da07e7a775150c1f5c791/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+    <vturb-smartplayer id="ab-6a430e4a13837ee9f4be6645" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+    <script type="text/javascript">
+      var s = document.createElement("script");
+      s.src = "https://scripts.converteai.net/52f8ef29-349e-4874-8125-1f02fe4dfccd/ab-test/6a430e4a13837ee9f4be6645/player.js";
+      s.async = !0;
+      document.head.appendChild(s);
+    </script>
   </div>
 </section>
 
-<!-- SEÇÃO DE VENDAS COMPLETA (ABERTA - SEM DELAY) -->
-<div id="sem-delay">
+<!-- SEÇÃO DE VENDAS COMPLETA (ABERTA) -->
+<div id="sales-body">
 
   <!-- FIRST CTA -->
   <section id="first-cta">
@@ -689,7 +692,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <h2 class="section-title section-title--light">O Sistema MINA por Dentro</h2>
       <p class="section-subtitle" style="color: rgba(252, 245, 227, 0.7);">A engenharia prática desenvolvida para extrair resultados imediatos.</p>
-
+      
       <div class="modules-grid">
         <div class="module-card">
           <div class="module-card-header"><div class="module-number">Módulo 1</div><div class="module-title">Onde Você Está</div></div>
@@ -724,11 +727,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="combo-books__tag">Faz parte do combo</span>
           <div class="combo-books__title">Coleção de 3 livros digitais de Natália Botelho</div>
           <div class="combo-books__covers">
-            <figure><img src="images/livro-o-jogo-da-fidelizacao.webp" alt="Capa do livro O Jogo da Fidelização" width="360" height="480" loading="lazy"><figcaption>O Jogo da Fidelização</figcaption></figure>
-            <figure><img src="images/livro-a-viagem-que-cabe-no-seu-bolso.webp" alt="Capa do livro A Viagem que Cabe no Seu Bolso" width="360" height="480" loading="lazy"><figcaption>A Viagem que Cabe no Seu Bolso</figcaption></figure>
-            <figure><img src="images/livro-descobrindo-o-mundo-depois-dos-60.webp" alt="Capa do livro Descobrindo o Mundo Depois dos 60" width="360" height="480" loading="lazy"><figcaption>Descobrindo o Mundo Depois dos 60</figcaption></figure>
+            <figure><img src="images/livro-o-jogo-da-fidelizacao.webp" alt="Capa do livro O Jogo da Fidelização" width="320" height="500" loading="lazy"><figcaption>O Jogo da Fidelização</figcaption></figure>
+            <figure><img src="images/livro-a-viagem-que-cabe-no-seu-bolso.webp" alt="Capa do livro A Viagem que Cabe no Seu Bolso" width="320" height="500" loading="lazy"><figcaption>A Viagem que Cabe no Seu Bolso</figcaption></figure>
+            <figure><img src="images/livro-descobrindo-o-mundo-depois-dos-60.webp" alt="Capa do livro Descobrindo o Mundo Depois dos 60" width="320" height="500" loading="lazy"><figcaption>Descobrindo o Mundo Depois dos 60</figcaption></figure>
           </div>
-          <div class="combo-books__price">Livros em PDF · <b>R$ 209,70</b> (R$ 69,90 cada)</div>
         </div>
         <!-- ===== COMBO LIVROS — BLOCO DOS LIVROS (fim) ===== -->
 
@@ -743,7 +745,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pricing-cash">ou <strong>R$ 287,14 à vista</strong></div>
 
         <a href="https://pay.hotmart.com/Q106074371A" class="btn-cta">Garantir Meu Acesso ao Sistema MINA</a>
-          <p class="btn-trust btn-trust--dark">🔒 Transação assegurada via Hotmart</p>
+        <p class="btn-trust btn-trust--dark">🔒 Transação assegurada via Hotmart</p>
 
         <div class="guarantee-box">
           <div class="guarantee-title">Garantia Incondicional de 7 Dias</div>
@@ -788,8 +790,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-</div>
-
+  <!-- F.A.Q. fica DENTRO do #sales-body para obedecer ao delay do VTurb -->
 <!-- ===== COMBO LIVROS — FAQ (início) ===== -->
 <section id="faq">
   <div class="container">
@@ -812,13 +813,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 <!-- ===== COMBO LIVROS — FAQ (fim) ===== -->
 
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
     <p>Todos os Direitos Reservados &copy; A Mina das Milhas &nbsp;|&nbsp; Sistema MINA</p>
     <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.5;">Aviso Legal: Os resultados reais de acúmulo e upgrade de cartões dependem do histórico de crédito individual e da volumetria de gastos mensais junto às instituições financeiras.</p>
     <!-- ===== COMBO LIVROS — AVISO NO RODAPÉ (início) ===== -->
-    <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.5;">Composição da oferta: o combo inclui o curso Sistema MINA e a Coleção de 3 livros digitais de Natália Botelho, publicados pela Trilha.me Editora (R$ 69,90 cada, R$ 209,70 os três). Os livros são entregues em PDF, não são bônus e podem ser adquiridos separadamente pelo valor integral. As imagens das capas são ilustrativas.</p>
+    <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.5;">Composição da oferta: o combo inclui o curso Sistema MINA e a Coleção de 3 livros digitais de Natália Botelho, publicados pela Trilha.me Editora. Os livros são entregues em PDF, não são bônus e podem ser adquiridos separadamente pelo valor integral. As imagens das capas são ilustrativas.</p>
     <!-- ===== COMBO LIVROS — AVISO NO RODAPÉ (fim) ===== -->
   </div>
 </footer>
@@ -1008,6 +1011,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   sync();
   setInterval(sync, 1000);
+})();
+</script>
+
+<!-- ============================================================
+     Só esconde o #sales-body/footer (e mantém o #hero em 100vh)
+     enquanto existir um player VTurb real na página (vturb-smartplayer).
+     Sem vídeo real, tudo fica visível normalmente. Quando o vídeo real
+     estiver presente e o VTurb configurar o tempo de revelação, o
+     conteúdo passa a ficar oculto até o VTurb liberar (sem depender
+     de timer próprio nosso).
+============================================================ -->
+<script>
+(function () {
+  var hero = document.getElementById('hero');
+  var salesBody = document.getElementById('sales-body');
+  var footer = document.querySelector('footer');
+  if (!hero || !salesBody) return;
+
+  function isVisible(el) {
+    return window.getComputedStyle(el).display !== 'none';
+  }
+
+  function sync() {
+    var visible = isVisible(salesBody);
+    if (visible) hero.classList.add('hero--collapsed');
+    else hero.classList.remove('hero--collapsed');
+    if (footer) footer.style.display = visible ? '' : 'none';
+  }
+
+  var hasRealPlayer = !!document.querySelector('vturb-smartplayer');
+  if (!hasRealPlayer) return; // sem vídeo real: não esconde nada
+
+  sync();
+  var observer = new MutationObserver(sync);
+  observer.observe(salesBody, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
 </script>
 
