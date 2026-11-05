@@ -593,6 +593,24 @@
       .bio-content { order: 1; padding: 56px 24px 40px; }
       .bio-photo-wrapper { order: 2; min-height: 380px; position: relative; }
     }
+
+    /* ===== COMBO LIVROS — CSS (início) ===== */
+    .combo-books{margin:8px 0 24px;padding:20px 16px 18px;background:transparent;border:1px solid rgba(8,49,53,.18);border-radius:8px;text-align:center}
+    .combo-books__tag{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-dark);background:rgba(8,49,53,.08);padding:5px 12px;border-radius:4px;margin-bottom:10px}
+    .combo-books__title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue-dark);line-height:1.35}
+    .combo-books__covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start;margin:16px 0 0}
+    .combo-books__covers img{width:100%;height:auto;aspect-ratio:320/500;object-fit:contain}
+    .combo-books__covers figcaption{font-size:.7rem;line-height:1.3;color:var(--grey-text);margin-top:6px}
+    .bonus-label{display:block;text-align:left;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin:0 0 4px}
+    #faq{background:var(--offwhite);padding:90px 24px}
+    .faq-list{max-width:760px;margin:40px auto 0}
+    .faq-item{background:#fff;border:1px solid rgba(8,49,53,.12);border-radius:8px;margin-bottom:12px}
+    .faq-item summary{cursor:pointer;list-style:none;padding:18px 48px 18px 20px;position:relative;font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue-dark)}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--orange);font-size:1.4rem;font-weight:700}
+    .faq-item[open] summary::after{content:'−'}
+    .faq-item p{padding:0 20px 18px;font-size:.95rem;line-height:1.7;color:var(--grey-text)}
+    /* ===== COMBO LIVROS — CSS (fim) ===== */
   </style>
 
 </head>
@@ -702,6 +720,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="pricing-stack">
           <li>O Sistema Mina Completo (3 Módulos)</li>
           <li>Acesso à Inteligência Artificial Treinada (MIA)</li>
+        </ul>
+
+        <!-- ===== COMBO LIVROS — BLOCO DOS LIVROS (início) ===== -->
+        <div class="combo-books">
+          <span class="combo-books__tag">Faz parte do combo</span>
+          <div class="combo-books__title">Coleção de 3 livros digitais de Natália Botelho</div>
+          <div class="combo-books__covers">
+            <figure><img src="images/livro-o-jogo-da-fidelizacao.webp" alt="Capa do livro O Jogo da Fidelização" width="320" height="500" loading="lazy"><figcaption>O Jogo da Fidelização</figcaption></figure>
+            <figure><img src="images/livro-a-viagem-que-cabe-no-seu-bolso.webp" alt="Capa do livro A Viagem que Cabe no Seu Bolso" width="320" height="500" loading="lazy"><figcaption>A Viagem que Cabe no Seu Bolso</figcaption></figure>
+            <figure><img src="images/livro-descobrindo-o-mundo-depois-dos-60.webp" alt="Capa do livro Descobrindo o Mundo Depois dos 60" width="320" height="500" loading="lazy"><figcaption>Descobrindo o Mundo Depois dos 60</figcaption></figure>
+          </div>
+        </div>
+        <!-- ===== COMBO LIVROS — BLOCO DOS LIVROS (fim) ===== -->
+
+        <span class="bonus-label">Bônus inclusos</span>
+        <ul class="pricing-stack">
           <li>Bônus: Módulo Exclusivo de Salas VIP</li>
           <li>Bônus Especial: Acesso Vitalício à Plataforma</li>
         </ul>
@@ -716,7 +750,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="guarantee-box">
           <div class="guarantee-title">Garantia Incondicional de 7 Dias</div>
           <p class="guarantee-text">
-            Acesse as aulas, utilize a Inteligência Artificial e consuma o material técnico. Se em até uma semana você decidir que o método não é para o seu perfil, devolvemos 100% do seu investimento sem burocracias.
+            Acesse as aulas, utilize a Inteligência Artificial e leia os livros. Se em até uma semana você decidir que o método não é para o seu perfil, devolvemos 100% do seu investimento sem burocracias.
           </p>
         </div>
       </div>
@@ -756,6 +790,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- F.A.Q. fica DENTRO do #sales-body para obedecer ao delay do VTurb -->
+<!-- ===== COMBO LIVROS — FAQ (início) ===== -->
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title section-title--dark">Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Posso comprar só o curso ou só os livros?</summary>
+        <p>Sim. O curso e os livros podem ser comprados separadamente, pelo valor integral de cada um. Para receber o link de compra avulsa, fale com o nosso suporte.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vou receber os livros em casa?</summary>
+        <p>Os livros são digitais: você recebe o arquivo em PDF logo após a compra, para ler no celular, no tablet ou no computador. As imagens das capas são ilustrativas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Os livros são um bônus?</summary>
+        <p>Não. Os livros fazem parte do combo que você está comprando. Cada um é uma obra independente, com conteúdo, promessa e preço próprios, que você pode ler e aplicar mesmo sem fazer o curso.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- ===== COMBO LIVROS — FAQ (fim) ===== -->
+
 </div>
 
 <!-- FOOTER -->
@@ -763,6 +820,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <p>Todos os Direitos Reservados &copy; A Mina das Milhas &nbsp;|&nbsp; Sistema MINA</p>
     <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.5;">Aviso Legal: Os resultados reais de acúmulo e upgrade de cartões dependem do histórico de crédito individual e da volumetria de gastos mensais junto às instituições financeiras.</p>
+    <!-- ===== COMBO LIVROS — AVISO NO RODAPÉ (início) ===== -->
+    <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.5;">Composição da oferta: o combo inclui o curso Sistema MINA e a Coleção de 3 livros digitais de Natália Botelho, publicados pela Trilha.me Editora. Os livros são entregues em PDF, não são bônus e podem ser adquiridos separadamente pelo valor integral. As imagens das capas são ilustrativas.</p>
+    <!-- ===== COMBO LIVROS — AVISO NO RODAPÉ (fim) ===== -->
   </div>
 </footer>
 
